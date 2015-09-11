@@ -18,6 +18,6 @@ dribbble_username:
 
 # Build settings
 markdown:    kramdown
-highlighter: rouge
+highlighter: pygments
 timezone:    'Europe/Warsaw'
 paginate:    5
