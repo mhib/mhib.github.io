@@ -1,1 +1,64 @@
-Hello World
+---
+layout: default
+---
+<!-- Main -->
+<div id="main">
+    {% if paginator.page == 1 %}
+      <section>
+          {% for post in paginator.posts limit:1 %}
+              <header class="major">
+                  <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+                  <p class="post-meta">{{ post.date | date: "%b %-d, %Y" }}{% if post.author %} • {{ post.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
+              </header>
+
+              <section>
+                  {{ post.content }}
+              </section>
+          {% endfor %}
+      </section>
+      {% assign off = 1 %}
+    {% else %}
+      {% assign off = 0 %}
+    {% endif %}
+    <section>
+        <div class="row">
+            {% for post in paginator.posts offset:off %}
+
+                <article class="{% cycle '6u', '6u$' %} 12u(small)">
+                    <header>
+                        <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+                    </header>
+                    <section>
+                        {{ post.excerpt }}
+                    </section>
+                    <footer>
+                        <ul class="actions">
+                            <li><a href="{{ post.url }}" class="button">Read More</a></li>
+                        </ul>
+                    </footer>
+                </article>
+
+            {% endfor %}
+        </div>
+    </section>
+    {% if paginator.total_pages > 1 %}
+      <section>
+        <div class="row">
+            <div class="12u pagination">
+              {% if paginator.previous_page %}
+                <a href="{{ paginator.previous_page_path }}" class="previous">Previous</a>
+              {% else %}
+                <span class="previous">Previous</span>
+              {% endif %}
+              <span class="page_number ">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
+              {% if paginator.next_page %}
+                <a href="{{ paginator.next_page_path }}" class="next">Next</a>
+              {% else %}
+                <span class="next ">Next</span>
+              {% endif %}
+            </div>
+        </div>
+      </section>
+    {% endif %}
+    <section></section>
+</div>
