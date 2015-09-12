@@ -1,0 +1,59 @@
+.next {
+  width: 98%;
+  padding: 1%;
+  border-bottom: 1px solid #eee;
+}
+
+.prev {
+  width: 98%;
+  padding: 1%;
+  border-bottom: 1px solid #eee;
+}
+
+.social {
+  list-style: none;
+  float: left;
+}
+
+.social li {
+  float: left;
+  padding-right: 1em;
+}
+
+.label {
+  display: none;
+}
+
+.copyrights {
+  float: right;
+}
+@media (min-width: 48em) {
+  .next {
+    width: 48%;
+    float: right;
+    padding: 0 0 0 2%;
+    border: none;
+  }
+
+  .prev {
+    min-height: 10px;
+    width: 48%;
+    float: left;
+    padding: 0 2% 0 0;
+    border: none;
+  }
+
+  .social {
+    margin-bottom: 1px;
+    padding: 0;
+    margin-bottom: 37px;
+    float: none;
+  }
+
+  .copyrights {
+    float: none;
+  }
+}
+
+
+

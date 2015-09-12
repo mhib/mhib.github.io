@@ -1,0 +1,96 @@
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="{{ site.baseurl }}">
+          {{ site.title }}
+        </a>
+      </h1>
+      <p class="lead">{{ site.description }}</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item{% if page.url == site.baseurl %} active{% endif %}" href="{{ site.baseurl }}">Home</a>
+
+      {% comment %}
+        The code below dynamically generates a sidebar nav of pages with
+        `layout: page` in the front-matter. See readme for usage.
+      {% endcomment %}
+
+      {% assign pages_list = site.pages %}
+      {% for node in pages_list %}
+        {% if node.title != null %}
+          {% if node.layout == "page" %}
+            <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url }}">{{ node.title }}</a>
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+    </nav>
+
+  </div>
+  <div class="copy container">
+    <ul class="social">
+        {% if site.github_username %}
+          <li>
+          <a href="https://github.com/{{ site.github_username }}" class="fa fa-github">
+            <span class="label">GitHub</span>
+          </a>
+        </li>
+      {% endif %}
+
+        {% if site.twitter_username %}
+          <li>
+          <a href="https://twitter.com/{{ site.twitter_username }}" class="fa fa-twitter">
+            <span class="label">Twitter</span>
+          </a>
+        </li>
+      {% endif %}
+
+        {% if site.linkedin_username %}
+          <li>
+          <a href="https://linkedin.com/in/{{ site.linkedin_username }}" class="fa fa-linkedin">
+            <span class="label">LinkedIn</span>
+          </a>
+        </li>
+      {% endif %}
+
+        {% if site.google_plus_username %}
+          <li>
+          <a href="https://plus.google.com/{{ site.google_plus_username }}" class="fa fa-google-plus">
+            <span class="label">Google+</span>
+          </a>
+        </li>
+      {% endif %}
+
+        {% if site.facebook_username %}
+          <li>
+          <a href="https://www.facebook.com/{{ site.facebook_username }}" class="fa fa-facebook">
+            <span class="label">Facebook</span>
+          </a>
+        </li>
+      {% endif %}
+
+        {% if site.dribbble_username %}
+          <li>
+          <a href="#" class="fa fa-dribbble">
+            <span class="label">Dribbble</span>
+          </a>
+        </li>
+      {% endif %}
+
+        {% if site.email %}
+          <li>
+          <a href="mailto:{{ site.email }}" class="fa fa-envelope-o">
+            <span class="label">Email</span>
+          </a>
+        </li>
+      {% endif %}
+        <li>
+          <a href="/feed.xml" class="fa fa-rss">
+            <span class="label">RSS</span>
+          </a>
+        </li>
+      </ul>
+    <p class="copyrights">&copy; {{ site.time | date: '%Y' }}</p>
+  </div>
+</div>

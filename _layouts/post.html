@@ -1,55 +1,45 @@
 ---
 layout: default
 ---
-<div id="main">
-    <article>
-        <header class="major">
-            <h2 class="post-title">{{ page.title }}</h2>
-                <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
-        </header>
 
-        <section>
-            {{ content }}
-        </section>
+<div class="post">
+  <h1 class="post-title">{{ page.title }}</h1>
+  <span class="post-date">{{ page.date | date_to_string }}</span>
+  {{ content }}
+</div>
 
-        <footer>
-            <div class="row">
-            {% if page.previous %}
+<div class="related">
+  {% comment %}
+  <h2>Related Posts</h2>
+  {% endcomment %}
 
-                <article class="{% cycle '6u', '6u$' %} 12u(small) excerpt">
-                    <header>
-                        <h2><a href="{{ page.previous.url }}">{{ page.previous.title }}</a></h2>
-                    </header>
-                    <section>
-                        {{ page.previous.excerpt }}
-                    </section>
-                    <footer>
-                        <ul class="actions">
-                            <li><a href="{{ page.previous.url }}" class="button">Read More</a></li>
-                        </ul>
-                    </footer>
-                </article>
-            {% endif %}
+  <div class="prev">
+    {% if page.previous %}
+      <h2>Previous post</h2>
 
-            {% if page.next %}
-
-                <article class="{% cycle '6u', '6u$' %} 12u(small) excerpt f-right">
-                    <header>
-                        <h2><a href="{{ page.next.url }}">{{ page.next.title }}</a></h2>
-                    </header>
-                    <section>
-                        {{ page.next.excerpt | markdownify }}
-                    </section>
-                    <footer>
-                        <ul class="actions">
-                            <li><a href="{{ page.next.url }}" class="button">Read More</a></li>
-                        </ul>
-                    </footer>
-                </article>
-            {% endif %}
-            </div>
-        </footer>
-
+      <article class="brief">
+      <header>
+        <h2><a href="{{ page.previous.url }}">{{ page.previous.title }}</a></h2>
+      </header>
+      <section>
+        {{ page.previous.excerpt | markdownify }}
+      </section>
     </article>
+  {% endif %}
+  </div>
 
+  <div class="next">
+    {% if page.next %}
+      <h2>Next post</h2>
+
+      <article class="brief">
+        <header>
+          <h2><a href="{{ page.next.url }}">{{ page.next.title }}</a></h2>
+        </header>
+        <section>
+          {{ page.next.excerpt | markdownify }}
+        </section>
+      </article>
+    {% endif %}
+  </div>
 </div>

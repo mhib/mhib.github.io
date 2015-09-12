@@ -4,8 +4,8 @@ author: Marcin Henryk Bartkowiak # Title of your site
 email:  mhbartkowiak+blog@gmail.com # Your contant email
 
 description: > # this means to ignore newlines until "baseurl:"
-  Marcin Henryk Bartkowiak's homepage
-baseurl: "" # the subpath of your site, e.g. /blog/
+  Homepage
+baseurl: "/" # the subpath of your site, e.g. /blog/
 url: "http://mhib.github.io" # the base hostname & protocol for your site
 
 # social stuff
