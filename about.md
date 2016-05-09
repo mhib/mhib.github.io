@@ -2,11 +2,12 @@
 layout: page
 title: About
 ---
+
 {% highlight ruby %}
   fork while fork
 {% endhighlight %}
 
-##Projects
+## Projects
 * [pelp](https://github.com/ii-lo/pelp)
 Public e-learnig platform
 * [dziennik](https://github.com/mhib/dziennik)
@@ -15,7 +16,7 @@ School class register
 Simple Ruby IRC framework
 
 
-##Games
+## Games
 * [opal-snake](https://github.com/mhib/opal-snake)
 Snake game in Opal. ([link](http://snakes.bitballoon.com/))
 * [typeSnake](https://github.com/mhib/typeSnake)
