@@ -6,7 +6,7 @@
           {{ site.title }}
         </a>
       </h1>
-      <p class="lead">{{ site.description }}</p>
+      {% if page.description %}<p class="lead">{{ site.description }}</p>{% endif %}
     </div>
 
     <nav class="sidebar-nav">
