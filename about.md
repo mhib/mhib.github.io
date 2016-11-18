@@ -10,8 +10,6 @@ title: About
 ## Projects
 * [pelp](https://github.com/ii-lo/pelp)
 Public e-learnig platform
-* [dziennik](https://github.com/mhib/dziennik)
-School class register
 * [balotelli](https://github.com/mhib/balotelli)
 Simple Ruby IRC framework
 
